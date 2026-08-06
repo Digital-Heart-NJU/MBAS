@@ -1,0 +1,186 @@
+Fingerprint extraction...
+Dataset073_MBAS
+Using <class 'nnunetv2.imageio.simpleitk_reader_writer.SimpleITKIO'> as reader/writer
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_016.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_017.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_018.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_037.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_038.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_039.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_049.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_050.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_051.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_004.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_005.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_006.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_043.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_044.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_045.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_052.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_053.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_054.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_070.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_019.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_020.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_021.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_034.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_035.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_036.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_067.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_068.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_069.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_010.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_011.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_012.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_028.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_029.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_030.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_061.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_062.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_063.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_013.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_014.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_015.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_046.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_047.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_048.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_064.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_065.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_066.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_007.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_008.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_009.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_025.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_026.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_027.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_055.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_056.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_057.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_001.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_002.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_003.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_031.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_032.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_033.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]

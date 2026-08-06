@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/data1/youyou/workplace/1-QUML/predict.py", line 21, in <module>
+    for file in os.listdir(path_input+folder):
+NotADirectoryError: [Errno 20] Not a directory: '/data1/youyou/workplace/quml_repro/gtTs073_mapped/MBAS_094.nii.gz'

@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/data1/youyou/conda_envs/quml/bin/nnUNetv2_plan_and_preprocess", line 6, in <module>
+    sys.exit(plan_and_preprocess_entry())
+  File "/data1/youyou/workplace/nnUNet-master/nnunetv2/experiment_planning/plan_and_preprocess_entrypoints.py", line 183, in plan_and_preprocess_entry
+    extract_fingerprints(args.d, args.fpe, args.npfp, args.verify_dataset_integrity, args.clean, args.verbose,
+  File "/data1/youyou/workplace/nnUNet-master/nnunetv2/experiment_planning/plan_and_preprocess_api.py", line 50, in extract_fingerprints
+    extract_fingerprint_dataset(d, fingerprint_extractor_class, num_processes, check_dataset_integrity, clean,
+  File "/data1/youyou/workplace/nnUNet-master/nnunetv2/experiment_planning/plan_and_preprocess_api.py", line 30, in extract_fingerprint_dataset
+    verify_dataset_integrity(join(nnUNet_raw, dataset_name), num_processes)
+  File "/data1/youyou/workplace/nnUNet-master/nnunetv2/experiment_planning/verify_dataset_integrity.py", line 215, in verify_dataset_integrity
+    raise RuntimeError(
+RuntimeError: Some segmentation images contained unexpected labels. Please check text output above to see which one(s).

@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/data1/youyou/workplace/quml_repro/scripts/prepare_dataset073_mbas_3label.py", line 53, in <module>
+    shutil.rmtree(p)
+  File "/data1/youyou/conda_envs/quml/lib/python3.10/shutil.py", line 725, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/data1/youyou/conda_envs/quml/lib/python3.10/shutil.py", line 658, in _rmtree_safe_fd
+    _rmtree_safe_fd(dirfd, fullname, onerror)
+  File "/data1/youyou/conda_envs/quml/lib/python3.10/shutil.py", line 681, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/data1/youyou/conda_envs/quml/lib/python3.10/shutil.py", line 679, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+FileNotFoundError: [Errno 2] No such file or directory: 'MBAS_038_0000.nii.gz'

@@ -1,0 +1,21 @@
+Fingerprint extraction...
+Dataset073_MBAS
+Using <class 'nnunetv2.imageio.simpleitk_reader_writer.SimpleITKIO'> as reader/writer
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_004.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_005.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_006.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_046.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_047.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]
+Error: Unexpected labels found in file /data1/youyou/workplace/nnUNet_quml/nnUNet_raw/Dataset073_MBAS/labelsTr/MBAS_048.nii.gz.
+Expected: [0, 1, 2]
+Found: [0. 1. 2. 3.]

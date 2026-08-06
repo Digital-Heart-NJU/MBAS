@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/data1/youyou/workplace/1-QUML/predict.py", line 20, in <module>
+    for folder in os.listdir(path_input):
+FileNotFoundError: [Errno 2] No such file or directory: '/data1/youyou/workplace/quml_repro/quml_input/'
