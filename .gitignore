@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+
+# Local medical image inputs and generated segmentation outputs.
+*.nii
+*.nii.gz
+private_input073/
+private_pred073/
+private_pred073_postprocessed*/
+meshes_private_pred073*/
+
+# Local runtime artifacts.
+logs/
