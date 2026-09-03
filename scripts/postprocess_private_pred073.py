@@ -11,7 +11,7 @@ from scipy import ndimage as ndi
 
 
 REPRO = Path(__file__).resolve().parents[1]
-DEFAULT_INPUT_DIR = REPRO / "private_pred073"
+DEFAULT_INPUT_DIR = REPRO
 DEFAULT_OUTPUT_DIR = REPRO / "private_pred073_postprocessed"
 
 LABELS = {
