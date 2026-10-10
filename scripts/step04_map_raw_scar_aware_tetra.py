@@ -258,6 +258,80 @@ def mask_to_surface(
     return oriented
 
 
+def sample_binary_mask_at_points(
+    mask: np.ndarray,
+    points_xyz: np.ndarray,
+    spacing_zyx: tuple[float, float, float],
+    origin_xyz: tuple[float, float, float],
+) -> np.ndarray:
+    sz, sy, sx = spacing_zyx
+    ox, oy, oz = origin_xyz
+    coordinates = np.vstack([
+        (points_xyz[:, 2] - oz) / sz,
+        (points_xyz[:, 1] - oy) / sy,
+        (points_xyz[:, 0] - ox) / sx,
+    ])
+    sampled = ndi.map_coordinates(
+        mask.astype(np.float32), coordinates, order=0, mode="constant", cval=0.0
+    )
+    return sampled >= 0.5
+
+def tetra_volumes(points: np.ndarray, tets: np.ndarray) -> np.ndarray:
+    tetra_points = points[tets]
+    signed = np.einsum(
+        "ij,ij->i",
+        np.cross(tetra_points[:, 1] - tetra_points[:, 0], tetra_points[:, 2] - tetra_points[:, 0]),
+        tetra_points[:, 3] - tetra_points[:, 0],
+    ) / 6.0
+    return np.abs(signed)
+
+
+def classify_tetra_by_raw_overlap(
+    points: np.ndarray,
+    tets: np.ndarray,
+    scar_iso: np.ndarray,
+    spacing_zyx: tuple[float, float, float],
+    origin_xyz: tuple[float, float, float],
+    min_sample_fraction: float,
+    chunk_size: int,
+) -> tuple[np.ndarray, np.ndarray, np.ndarray, dict[str, Any]]:
+    if not 0 <= min_sample_fraction <= 1:
+        raise ValueError("min_sample_fraction must be between 0 and 1")
+    if chunk_size <= 0:
+        raise ValueError("sample_chunk_size must be positive")
+
+    sample_fraction = np.zeros(tets.shape[0], dtype=np.float32)
+    centroid_inside = np.zeros(tets.shape[0], dtype=bool)
+    volumes = tetra_volumes(points, tets)
+    for start in range(0, tets.shape[0], chunk_size):
+        end = min(start + chunk_size, tets.shape[0])
+        samples = tetra_sample_points(points, tets[start:end])
+        inside = sample_binary_mask_at_points(
+            scar_iso,
+            samples.reshape((-1, 3)),
+            spacing_zyx,
+            origin_xyz,
+        ).reshape(samples.shape[:2])
+        centroid_inside[start:end] = inside[:, 0]
+        sample_fraction[start:end] = inside.mean(axis=1)
+
+    scar_elements = (sample_fraction >= min_sample_fraction) | centroid_inside
+    scar_volume_ml = float(np.sum(volumes[scar_elements]) / 1000.0)
+    total_volume_ml = float(np.sum(volumes) / 1000.0)
+    return scar_elements, sample_fraction, volumes, {
+        "method": "direct raw scar volume overlap sampling",
+        "sample_points_per_tetra": 11,
+        "sample_points": "centroid, four vertices, six edge midpoints",
+        "min_sample_fraction": float(min_sample_fraction),
+        "centroid_inside_always_counts_as_scar": True,
+        "tetra_count": int(tets.shape[0]),
+        "scar_element_count": int(np.count_nonzero(scar_elements)),
+        "scar_element_fraction": float(np.mean(scar_elements)) if scar_elements.size else None,
+        "scar_tetra_volume_ml": scar_volume_ml,
+        "total_tetra_volume_ml": total_volume_ml,
+        "scar_tetra_volume_fraction": scar_volume_ml / total_volume_ml if total_volume_ml > 0 else None,
+        "raw_scar_sample_fraction": percentile_stats(sample_fraction),
+    }
 
 
 
