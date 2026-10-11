@@ -67,7 +67,6 @@ def read_nifti(path: Path) -> NiftiVolume:
         sform=reader.GetSFormMatrix(),
     )
 
-
 def write_nifti_like(reference: NiftiVolume, array_zyx: np.ndarray, out_path: Path) -> None:
     out_path.parent.mkdir(parents=True, exist_ok=True)
     vtk_array = numpy_to_vtk(array_zyx.astype(np.uint8).ravel(order="C"), deep=True, array_type=vtk.VTK_UNSIGNED_CHAR)
