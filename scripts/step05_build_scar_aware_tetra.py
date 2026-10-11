@@ -76,6 +76,11 @@ from step04_map_raw_scar_to_tetra import (
 )
 
 
+def write_json(path: Path, payload: dict[str, Any]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(payload, indent=2, default=str) + "\n", encoding="utf-8")
+
+
 def resolve_geometry_params(config: dict[str, Any], atrium: np.ndarray, meta: Any) -> dict[str, Any]:
     """Resolve automatic geometry parameters while retaining auto-opening."""
 
@@ -223,6 +228,7 @@ def build_scar_aware_masks(
         "bridge": bridge,
     }, info
 
+
 def barycentric_weights(order: int) -> np.ndarray:
     if order < 1:
         raise ValueError("sample_order must be >= 1")
@@ -338,6 +344,7 @@ def classify_fraction_tags(
         "tag_counts": {str(int(key)): int(value) for key, value in zip(unique, counts)},
     }
 
+
 def write_multitag_elem(src_elem: Path, dst_elem: Path, tags: np.ndarray) -> None:
     dst_elem.parent.mkdir(parents=True, exist_ok=True)
     element_index = 0
@@ -364,6 +371,7 @@ def write_multitag_elem(src_elem: Path, dst_elem: Path, tags: np.ndarray) -> Non
                 target.write(line)
     if element_index != tags.size:
         raise ValueError(f"Tagged {element_index} tetrahedra, expected {tags.size}")
+
 
 def write_fraction_vtu(
     path: Path,
@@ -766,4 +774,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
