@@ -209,4 +209,6 @@ def border_component_ids(cc: np.ndarray) -> set[int]:
     ids.discard(0)
     return ids
 
+def
+
 
