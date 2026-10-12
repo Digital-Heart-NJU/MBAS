@@ -113,8 +113,100 @@ def label_counts(array: np.ndarray) -> dict[str, int]:
     values, counts = np.unique(array, return_counts=True)
     return {str(int(value)): int(count) for value, count in zip(values, counts, strict=True)}
 
+def load_opening_landmarks(path: Path | None) -> dict[str, dict[str, Any]]:
+    """Load reviewed, case-local opening landmarks in relative LA coordinates."""
+    if path is None:
+        return {}
+    if not path.exists():
+        raise FileNotFoundError(f"Opening landmark file not found: {path}")
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    cases = payload.get("cases")
+    if not isinstance(cases, dict):
+        raise ValueError(f"{path}: expected a top-level 'cases' object")
+    for case, spec in cases.items():
+        if not isinstance(spec, dict) or not isinstance(spec.get("openings"), list):
+            raise ValueError(f"{path}: case {case!r} must contain an 'openings' list")
+        classes: set[str] = set()
+        for opening in spec["openings"]:
+            opening_class = str(opening.get("opening_class", ""))
+            target = opening.get("relative_centroid_zyx")
+            if not opening_class or opening_class in classes:
+                raise ValueError(f"{path}: case {case!r} has a missing or duplicate opening class")
+            if not isinstance(target, list) or len(target) != 3 or not all(np.isfinite(float(value)) for value in target):
+                raise ValueError(f"{path}: invalid relative_centroid_zyx for {case}/{opening_class}")
+            classes.add(opening_class)
+    return cases
 
 
+def min_contact_voxels_from_physical_threshold(
+    spacing_zyx: tuple[float, float, float],
+    min_contact_mm3: float,
+    min_contact_voxels_floor: int,
+) -> int:
+    voxel_mm3 = float(math.prod(spacing_zyx))
+    physical_voxels = int(math.ceil(min_contact_mm3 / voxel_mm3)) if min_contact_mm3 > 0 else 0
+    return max(1, int(min_contact_voxels_floor), physical_voxels)
 
+
+def opening_review_priority(contact_mm3: float, threshold_mm3: float, protected: bool) -> str:
+    if not protected:
+        return "none"
+    if contact_mm3 < threshold_mm3 * 1.5:
+        return "high"
+    if contact_mm3 < threshold_mm3 * 3.0:
+        return "medium"
+    return "low"
+
+def output_label_array(repaired_semantic: np.ndarray, output_mode: str) -> np.ndarray:
+    if output_mode == "wall-only":
+        return np.where(repaired_semantic == WALL_LABEL, WALL_LABEL, 0).astype(np.uint8)
+    if output_mode == "semantic":
+        return repaired_semantic.astype(np.uint8)
+    raise ValueError(f"Unsupported output mode: {output_mode}")
+
+
+def component_summary(mask: np.ndarray, top_n: int = 8) -> dict[str, Any]:
+    cc, n_components = ndi.label(mask, structure=np.ones((3, 3, 3), dtype=bool))
+    sizes = np.bincount(cc.ravel()) if n_components else np.array([0], dtype=np.int64)
+    top = sorted((int(value) for value in sizes[1:] if value > 0), reverse=True)[:top_n]
+    return {
+        "component_count": int(n_components),
+        "top_component_voxels": top,
+        "total_voxels": int(mask.sum()),
+    }
+
+
+def distance_dilation(mask: np.ndarray, spacing_zyx: tuple[float, float, float], radius_mm: float) -> np.ndarray:
+    if radius_mm <= 0:
+        return mask.copy()
+    if not np.any(mask):
+        return np.zeros(mask.shape, dtype=bool)
+    return ndi.distance_transform_edt(~mask, sampling=spacing_zyx) <= radius_mm
+
+
+def distance_erosion(mask: np.ndarray, spacing_zyx: tuple[float, float, float], radius_mm: float) -> np.ndarray:
+    if radius_mm <= 0 or not np.any(mask):
+        return mask.copy()
+    return ndi.distance_transform_edt(mask, sampling=spacing_zyx) > radius_mm
+
+
+def distance_closing(mask: np.ndarray, spacing_zyx: tuple[float, float, float], radius_mm: float) -> np.ndarray:
+    return distance_erosion(distance_dilation(mask, spacing_zyx, radius_mm), spacing_zyx, radius_mm)
+
+
+def border_component_ids(cc: np.ndarray) -> set[int]:
+    values = np.concatenate(
+        [
+            cc[0, :, :].ravel(),
+            cc[-1, :, :].ravel(),
+            cc[:, 0, :].ravel(),
+            cc[:, -1, :].ravel(),
+            cc[:, :, 0].ravel(),
+            cc[:, :, -1].ravel(),
+        ]
+    )
+    ids = {int(value) for value in np.unique(values)}
+    ids.discard(0)
+    return ids
 
 
